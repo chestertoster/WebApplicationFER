@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplicationFER</name>
+    </assembly>
+    <members>
+        <member name="M:WebApplicationFER.Controllers.ActivityDirectionController.Get(System.Int32)">
+            <summary>
+            Получает конкретное направление деятельности из базы данных.
+            </summary>
+            <param name="id">Идентификатор направления деятельности для получения.</param>
+            <returns>Возвращает объект JSON, представляющий направление деятельности, соответствующее указанному идентификатору. Если соответствующее направление деятельности не найдено, возвращает HTTP-статус 404 Not Found.</returns>
+            <response code="200">Указывает, что запись направления деятельности была успешно получена.</response>
+            <response code="404">Указывает, что в базе данных не найдена соответствующая запись направления деятельности.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.ActivityDirectionController.Create(WebApplicationFER.DataBase.ActivityDirection)">
+            <summary>
+            Создает новую запись направления деятельности в базе данных.
+            </summary>
+            <param name="activityDirection">Объект, представляющий новую запись направления деятельности.</param>
+            <returns>Возвращает HTTP-статус 200 OK в случае успешного создания записи в базе данных, либо HTTP-статус 400 Bad Request в случае, если запись с указанным идентификатором уже существует.</returns>
+            <response code="200">Указывает, что запись направления деятельности была успешно создана.</response>
+            <response code="400">Указывает, что в базе данных уже существует запись с указанным идентификатором.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.ActivityDirectionController.Edit(WebApplicationFER.DataBase.ActivityDirection)">
+            <summary>
+            Обновляет данные по определенному направлению деятельности.
+            </summary>
+            <param name="activityDirection">Объект направления деятельности для обновления.</param>
+            <returns>Возвращает HTTP-статус 200 OK в случае успешного обновления данных. Если объект направления деятельности для обновления не найден, возвращает HTTP-статус 400 Bad Request.</returns>
+            <response code="200">Указывает, что данные по направлению деятельности были успешно обновлены.</response>
+            <response code="400">Указывает, что объект направления деятельности для обновления не найден в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.ActivityDirectionController.Delete(System.Int32)">
+            <summary>
+            Удаляет запись о направлении деятельности из базы данных по заданному идентификатору.
+            </summary>
+            <param name="id">Идентификатор направления деятельности для удаления.</param>
+            <returns>Возвращает объект JSON, представляющий удаленное направление деятельности. Если запись не найдена в базе данных, возвращает HTTP-статус 404 Not Found.</returns>
+            <response code="200">Указывает, что запись о направлении деятельности была успешно удалена.</response>
+            <response code="404">Указывает, что в базе данных не найдена соответствующая запись о направлении деятельности.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyConsumptionController.Get(System.String)">
+            <summary>
+            Получает конкретный тип энергии из базы данных.
+            </summary>
+            <param name="code">Идентификатор типа энергии для получения.</param>
+            <returns>Возвращает объект JSON, представляющий тип энергии, соответствующий указанному идентификатору. Если соответствующий тип энергии не найден, возвращает HTTP-статус 404 Not Found.</returns>
+            <response code="200">Указывает, что запись типа энергии была успешно получена.</response>
+            <response code="404">Указывает, что в базе данных не найдена соответствующая запись типа энергии.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyConsumptionController.Create(WebApplicationFER.DataBase.EnergyConsumption)">
+            <summary>
+            Создает новую запись потребления энергии в базе данных.
+            </summary>
+            <param name="energyConsumption">Новая запись потребления энергии.</param>
+            <returns>Возвращает HTTP-статус 200 OK в случае успешного создания записи, иначе возвращает HTTP-статус 400 Bad Request.</returns>
+            <response code="200">Указывает, что запись потребления энергии была успешно создана.</response>
+            <response code="400">Указывает, что запись потребления энергии с таким же кодом оборудования уже существует в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyConsumptionController.Edit(WebApplicationFER.DataBase.EnergyConsumption)">
+            <summary>
+            Обновляет информацию о потреблении энергии в базе данных.
+            </summary>
+            <param name="energyConsumption">Объект, содержащий информацию о потреблении энергии.</param>
+            <returns>Возвращает HTTP-статус 200 OK, если обновление прошло успешно, иначе возвращает статус 400 Bad Request.</returns>
+            <response code="200">Указывает, что данные о потреблении энергии были успешно обновлены.</response>
+            <response code="400">Указывает, что не удалось обновить данные о потреблении энергии из-за отсутствия соответствующего объекта в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyConsumptionController.Delete(System.String)">
+            <summary>
+            Удаляет запись потребления энергии из базы данных по коду оборудования.
+            </summary>
+            <param name="code">Код оборудования записи потребления энергии, которую требуется удалить.</param>
+            <returns>Возвращает HTTP-статус 200 OK в случае успешного удаления записи, иначе возвращает HTTP-статус 400 Bad Request.</returns>
+            <response code="200">Указывает, что запись потребления энергии была успешно удалена.</response>
+            <response code="400">Указывает, что запись потребления энергии с указанным кодом оборудования не найдена в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyTypeController.Get(System.Int32)">
+            <summary>
+            Получает конкретный тип энергии из базы данных.
+            </summary>
+            <param name="id">Идентификатор типа энергии для получения.</param>
+            <returns>Возвращает объект JSON, представляющий тип энергии, соответствующий указанному идентификатору. Если соответствующий тип энергии не найден, возвращает HTTP-статус 404 Not Found.</returns>
+            <response code="200">Указывает, что запись типа энергии была успешно получена.</response>
+            <response code="404">Указывает, что в базе данных не найдена соответствующая запись типа энергии.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyTypeController.Create(WebApplicationFER.DataBase.EnergyType)">
+            <summary>
+            Создает новый тип энергии и сохраняет его в базе данных.
+            </summary>
+            <param name="energyType">Объект типа энергии, который нужно добавить в базу данных.</param>
+            <returns>Возвращает HTTP-статус 200 OK, если тип энергии был успешно создан и сохранен в базе данных. Если указанный тип энергии уже существует, возвращает HTTP-статус 400 Bad Request.</returns>
+            <response code="200">Указывает, что тип энергии был успешно создан и сохранен в базе данных.</response>
+            <response code="400">Указывает, что указанный тип энергии уже существует в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyTypeController.Edit(WebApplicationFER.DataBase.EnergyType)">
+            <summary>
+            Обновляет тип энергии в базе данных.
+            </summary>
+            <param name="energyType">Объект типа энергии, который нужно обновить.</param>
+            <returns code="200">Возвращает код 200, если объект был успешно обновлен.</returns>
+            <returns code="400">Указывает, что указанный тип энергии уже существует в базе данных.</returns>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EnergyTypeController.Delete(System.Int32)">
+            <summary>
+            Удаляет тип энергии из базы данных по указанному идентификатору.
+            </summary>
+            <param name="id">Идентификатор типа энергии, который нужно удалить.</param>
+            <returns code="200">Возвращает код 200, если объект был успешно удален.</returns>
+            <returns code="400">Запись не найдена в базе данных.</returns>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentController.Get(System.Int32)">
+            <summary>
+            Получает информацию об оборудовании по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор оборудования.</param>
+            <returns>Возвращает объект оборудования в формате JSON.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="404">Оборудование не найдено.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentController.Create(WebApplicationFER.DataBase.Equipment)">
+            <summary>
+            Создает новую запись об оборудовании.
+            </summary>
+            <param name="equipment">Данные для создания новой записи об оборудовании.</param>
+            <returns>Возвращает код состояния HTTP.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">В запросе содержатся некорректные данные.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentController.Edit(WebApplicationFER.DataBase.Equipment)">
+            <summary>
+            Обновляет данные записи об оборудовании.
+            </summary>
+            <param name="equipment">Данные для обновления записи об оборудовании.</param>
+            <returns>Возвращает код состояния HTTP.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">В запросе содержатся некорректные данные или запись об оборудовании не найдена в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentController.Delete(System.Int32)">
+            <summary>
+            Удаляет запись об оборудовании из базы данных по указанному идентификатору.
+            </summary>
+            <param name="id">Идентификатор записи об оборудовании.</param>
+            <returns>Возвращает код состояния HTTP.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">Запись об оборудовании не найдена в базе данных.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentTypeController.Get(System.Int32)">
+            <summary>
+            Возвращает данные о типе оборудования по заданному идентификатору.
+            </summary>
+            <param name="id">Идентификатор типа оборудования.</param>
+            <returns>Возвращает данные о типе оборудования в формате JSON.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="404">В запросе содержатся некорректные данные.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentTypeController.Create(WebApplicationFER.DataBase.EquipmentType)">
+            <summary>
+            Создает новый тип оборудования.
+            </summary>
+            <param name="equipmentType">Данные о типе оборудования.</param>
+            <returns>Возвращает статус HTTP 200 в случае успешного создания типа оборудования.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">В запросе содержатся некорректные данные.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentTypeController.Edit(WebApplicationFER.DataBase.EquipmentType)">
+            <summary>
+            Обновляет информацию о типе оборудования.
+            </summary>
+            <param name="equipmentType">Объект типа оборудования для обновления.</param>
+            <returns>Возвращает код состояния HTTP.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">В запросе содержатся некорректные данные.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.EquipmentTypeController.Delete(System.Int32)">
+            <summary>
+            Удаляет тип оборудования по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор типа оборудования.</param>
+            <returns>Возвращает код состояния HTTP.</returns>
+            <response code="200">Успешное выполнение запроса.</response>
+            <response code="400">В запросе содержатся некорректные данные.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.UsersController.Create(WebApplicationFER.DataBase.User)">
+            <summary>
+            Создает нового пользователя.
+            </summary>
+            <param name="user">Объект пользователя, которого необходимо создать.</param>
+            <returns>Возвращает статус HTTP 200 в случае успешного выполнения запроса.</returns>
+            <response code="200">Запрос выполнен успешно.</response>
+            <response code="400">В случае ошибки возвращает статус HTTP 400.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.UsersController.Edit(WebApplicationFER.DataBase.User)">
+            <summary>
+            Обновляет данные пользователя.
+            </summary>
+            <param name="user">Объект пользователя, данные которого необходимо обновить.</param>
+            <returns>Возвращает статус HTTP 200 в случае успешного выполнения запроса.</returns>
+            <response code="200">Запрос выполнен успешно.</response>
+            <response code="400">В случае ошибки возвращает статус HTTP 400.</response>
+        </member>
+        <member name="M:WebApplicationFER.Controllers.UsersController.Delete(System.Int32)">
+            <summary>
+            Удаляет пользователя по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Возвращает статус HTTP 200 в случае успешного выполнения запроса.</returns>
+            <response code="200">Запрос выполнен успешно.</response>
+            <response code="400">В случае ошибки возвращает статус HTTP 400.</response>
+        </member>
+    </members>
+</doc>
